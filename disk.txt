@@ -1,0 +1,372 @@
+shiyanlou:~/ $ zip -r -q -o shiyanlou.zip /home/shiyanlou/Desktop                                                                  [18:33:11]
+shiyanlou:~/ $ ls                                                                                                                  [18:34:12]
+Code  Desktop  golang  lib  node_modules  package.json  shiyanlou.zip  src-gen  webpack.config.js  yarn.lock
+shiyanlou:~/ $ du -h shiyanlou.zip                                                                                                 [18:34:15]
+8.0K	shiyanlou.zip
+shiyanlou:~/ $ file shiyanlou.zip                                                                                                  [18:34:25]
+shiyanlou.zip: Zip archive data, at least v1.0 to extract
+shiyanlou:~/ $ unzip shiyanlou.zip                                                                                                 [18:34:47]
+Archive:  shiyanlou.zip
+   creating: home/shiyanlou/Desktop/
+  inflating: home/shiyanlou/Desktop/fcitx.desktop  
+  inflating: home/shiyanlou/Desktop/netsurf-gtk.desktop  
+  inflating: home/shiyanlou/Desktop/xfce4-terminal.desktop  
+  inflating: home/shiyanlou/Desktop/gvim.desktop  
+  inflating: home/shiyanlou/Desktop/sublime_text.desktop  
+  inflating: home/shiyanlou/Desktop/gedit.desktop  
+shiyanlou:~/ $ unzip -q shiyanlou.zip -d ziptest                                                                                   [18:37:51]
+shiyanlou:~/ $ ls                                                                                                                  [18:38:09]
+Code  Desktop  golang  home  lib  node_modules  package.json  shiyanlou.zip  src-gen  webpack.config.js  yarn.lock  ziptest
+shiyanlou:~/ $ unzip -1 shiyanlou.zip                                                                                              [18:38:11]
+UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.
+
+Usage: unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]
+  Default action is to extract files in list, except those in xlist, to exdir;
+  file[.zip] may be a wildcard.  -Z => ZipInfo mode ("unzip -Z" for usage).
+
+  -p  extract files to pipe, no messages     -l  list files (short format)
+  -f  freshen existing files, create none    -t  test compressed archive data
+  -u  update files, create if necessary      -z  display archive comment only
+  -v  list verbosely/show version info       -T  timestamp archive to latest
+  -x  exclude files that follow (in xlist)   -d  extract files into exdir
+modifiers:
+  -n  never overwrite existing files         -q  quiet mode (-qq => quieter)
+  -o  overwrite files WITHOUT prompting      -a  auto-convert any text files
+  -j  junk paths (do not make directories)   -aa treat ALL files as text
+  -U  use escapes for all non-ASCII Unicode  -UU ignore any Unicode fields
+  -C  match filenames case-insensitively     -L  make (some) names lowercase
+  -X  restore UID/GID info                   -V  retain VMS version numbers
+  -K  keep setuid/setgid/tacky permissions   -M  pipe through "more" pager
+  -O CHARSET  specify a character encoding for DOS, Windows and OS/2 archives
+  -I CHARSET  specify a character encoding for UNIX and other archives
+
+See "unzip -hh" or unzip.txt for more help.  Examples:
+  unzip data1 -x joe   => extract all files except joe from zipfile data1.zip
+  unzip -p foo | more  => send contents of foo.zip via pipe into program more
+  unzip -fo foo ReadMe => quietly replace existing ReadMe if archive file newer
+shiyanlou:~/ $ tar -P -c -f shiyanlou.tar /home/shiyanlou/Desktop                                                                  [18:38:30]
+shiyanlou:~/ $ mkdir tardir                                                                                                        [18:49:45]
+shiyanlou:~/ $ tar -xf shiyanlou.tar -C tardir                                                                                     [18:50:13]
+tar: 从成员名中删除开头的“/”
+shiyanlou:~/ $ tar -tf shiyanlou.tar                                                                                               [18:50:37]
+tar: 从成员名中删除开头的“/”
+/home/shiyanlou/Desktop/
+/home/shiyanlou/Desktop/fcitx.desktop
+/home/shiyanlou/Desktop/netsurf-gtk.desktop
+/home/shiyanlou/Desktop/xfce4-terminal.desktop
+/home/shiyanlou/Desktop/gvim.desktop
+/home/shiyanlou/Desktop/sublime_text.desktop
+/home/shiyanlou/Desktop/gedit.desktop
+shiyanlou:~/ $ tar -xf shiyanlou.tar -c tardir                                                                                     [18:51:03]
+tar: You may not specify more than one '-Acdtrux', '--delete' or  '--test-label' option
+Try 'tar --help' or 'tar --usage' for more information.
+shiyanlou:~/ $ tar -xf shiyanlou.tar -C tardir                                                                                     [18:51:36]
+tar: 从成员名中删除开头的“/”
+shiyanlou:~/ $ ls                                                                                                                  [18:51:57]
+Code     golang  lib           package.json   shiyanlou.zip  tardir             yarn.lock
+Desktop  home    node_modules  shiyanlou.tar  src-gen        webpack.config.js  ziptest
+shiyanlou:~/ $ tar -P -xf shiyanlou.tar -C tardir                                                                                  [18:52:06]
+shiyanlou:~/ $ cd tardir                                                                                                           [18:53:29]
+shiyanlou:tardir/ $ ls                                                                                                             [18:54:01]
+home
+shiyanlou:tardir/ $ cd home                                                                                                        [18:54:02]
+shiyanlou:home/ $ ls                                                                                                               [18:54:07]
+shiyanlou
+shiyanlou:home/ $ cd shiyanlou                                                                                                     [18:54:08]
+shiyanlou:shiyanlou/ $ ls                                                                                                          [18:54:13]
+Desktop
+shiyanlou:shiyanlou/ $ cd Desktop                                                                                                  [18:54:14]
+shiyanlou:Desktop/ $ ls                                                                                                            [18:54:20]
+fcitx.desktop  gedit.desktop  gvim.desktop  netsurf-gtk.desktop  sublime_text.desktop  xfce4-terminal.desktop
+shiyanlou:Desktop/ $ sudo apt-get install libaa-bin                                                                                [18:54:22]
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列软件包是自动安装的并且现在不需要了：
+  libpython3-dev libpython3.5-dev python3.5-dev
+使用'sudo apt autoremove'来卸载它(它们)。
+下列【新】软件包将被安装：
+  libaa-bin
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。
+需要下载 8,812 B 的归档。
+解压缩后会消耗 62.5 kB 的额外空间。
+获取:1 http://mirrors.cloud.aliyuncs.com/ubuntu xenial/universe amd64 libaa-bin amd64 1.4p5-44build1 [8,812 B]
+已下载 8,812 B，耗时 0秒 (296 kB/s)
+正在选中未选择的软件包 libaa-bin。
+(正在读取数据库 ... 系统当前共安装有 126880 个文件和目录。)
+正准备解包 .../libaa-bin_1.4p5-44build1_amd64.deb  ...
+正在解包 libaa-bin (1.4p5-44build1) ...
+正在处理用于 man-db (2.7.5-1) 的触发器 ...
+正在设置 libaa-bin (1.4p5-44build1) ...
+shiyanlou:Desktop/ $ aafire                                                                                                        [18:56:40]
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":1.0"
+      after 64340 requests (64340 known processed) with 0 events remaining.
+shiyanlou:Desktop/ $ aafire                                                                                                        [18:56:54]
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":1.0"
+      after 571611 requests (571611 known processed) with 0 events remaining.
+shiyanlou:Desktop/ $ cd ~                                                                                                          [19:00:05]
+shiyanlou:~/ $ touch test                                                                                                          [19:00:25]
+shiyanlou:~/ $ zip test.zip test                                                                                                   [19:00:50]
+  adding: test (stored 0%)
+shiyanlou:~/ $ zio -o test.zip test                                                                                                [19:02:07]
+zsh: command not found: zio
+shiyanlou:~/ $ zip -o test.zip test                                                                                                [19:03:22]
+updating: test (stored 0%)
+shiyanlou:~/ $ zip -o test.zip /home/shiyanlou/test                                                                                [19:03:35]
+  adding: home/shiyanlou/test (stored 0%)
+shiyanlou:~/ $ ls                                                                                                                  [19:03:59]
+Code     golang  lib           package.json   shiyanlou.zip  tardir  test.zip           yarn.lock
+Desktop  home    node_modules  shiyanlou.tar  src-gen        test    webpack.config.js  ziptest
+shiyanlou:~/ $ unzip test.zip -d /home/shiyanlou                                                                                   [19:04:08]
+Archive:  test.zip
+replace /home/shiyanlou/test? [y]es, [n]o, [A]ll, [N]one, [r]ename: A
+ extracting: /home/shiyanlou/test    
+ extracting: /home/shiyanlou/home/shiyanlou/test  
+shiyanlou:~/ $ ls                                                                                                                  [19:05:15]
+Code     golang  lib           package.json   shiyanlou.zip  tardir  test.zip           yarn.lock
+Desktop  home    node_modules  shiyanlou.tar  src-gen        test    webpack.config.js  ziptest
+shiyanlou:~/ $ df                                                                                                                  [19:05:21]
+文件系统                                                                                               1K-块      已用      可用 已用% 挂载点
+/dev/mapper/docker-252:17-6029313-bbe122539d2ca2ef465395449087051d6a4ddf17cdd43c3ac19f43a2d2da394a  12254384   8519716   3089140   74% /
+tmpfs                                                                                                  65536         0     65536    0% /dev
+tmpfs                                                                                                8212604         0   8212604    0% /sys/fs/cgroup
+/dev/vdb1                                                                                          309505024 184136360 109623692   63% /etc/hosts
+shm                                                                                                    65536        84     65452    1% /dev/shm
+/dev/vda1                                                                                           41151808  12689744  26348636   33% /etc/shiyanlou/sbin/init.sh
+tmpfs                                                                                                8212604         0   8212604    0% /proc/acpi
+tmpfs                                                                                                8212604         0   8212604    0% /proc/scsi
+tmpfs                                                                                                8212604         0   8212604    0% /sys/firmware
+shiyanlou:~/ $ df -h                                                                                                               [19:07:56]
+文件系统                                                                                            容量  已用  可用 已用% 挂载点
+/dev/mapper/docker-252:17-6029313-bbe122539d2ca2ef465395449087051d6a4ddf17cdd43c3ac19f43a2d2da394a   12G  8.2G  3.0G   74% /
+tmpfs                                                                                                64M     0   64M    0% /dev
+tmpfs                                                                                               7.9G     0  7.9G    0% /sys/fs/cgroup
+/dev/vdb1                                                                                           296G  176G  105G   63% /etc/hosts
+shm                                                                                                  64M   84K   64M    1% /dev/shm
+/dev/vda1                                                                                            40G   13G   26G   33% /etc/shiyanlou/sbin/init.sh
+tmpfs                                                                                               7.9G     0  7.9G    0% /proc/acpi
+tmpfs                                                                                               7.9G     0  7.9G    0% /proc/scsi
+tmpfs                                                                                               7.9G     0  7.9G    0% /sys/firmware
+shiyanlou:~/ $ du -h -d 0 ~                                                                                                        [19:10:17]
+1.4G	/home/shiyanlou
+shiyanlou:~/ $ dd of=test bs=10 count=1                                                                                            [19:11:08]
+hello shiyanlou
+记录了1+0 的读入
+记录了1+0 的写出
+10 bytes copied, 40.7368 s, 0.0 kB/s
+shiyanlou:~/ $ anlou                                                                                                               [19:14:45]
+zsh: command not found: anlou
+shiyanlou:~/ $ dd if=/dev/stdin of=/dev/stdout bs=10 count=1                                                                       [19:14:45]
+shiyanlou
+shiyanlou
+记录了1+0 的读入
+记录了1+0 的写出
+10 bytes copied, 25.5792 s, 0.0 kB/s
+shiyanlou:~/ $ anlou                                                                                                               [19:16:15]
+zsh: command not found: anlou
+shiyanlou:~/ $ du -b test                                                                                                          [19:16:36]
+10	test
+shiyanlou:~/ $ cat test                                                                                                            [19:16:42]
+hello shiy%                                                                                                                                   shiyanlou:~/ $ du -b stdout                                                                                                        [19:17:01]
+du: 无法访问'stdout': 没有那个文件或目录
+shiyanlou:~/ $ dd if=/dev/stdin of=test bs=10 count=1 conv=ucase                                                                   [19:17:54]
+shiyanlou good job!
+记录了1+0 的读入
+记录了1+0 的写出
+10 bytes copied, 15.4002 s, 0.0 kB/s
+shiyanlou:~/ $ good job!                                                                                                           [19:18:58]
+zsh: command not found: good
+shiyanlou:~/ $ cat test                                                                                                            [19:18:58]
+SHIYANLOU %                                                                                                                                   shiyanlou:~/ $ dd if=/dev/zero of=virtual.img bs=1M count=256                                                                      [19:19:22]
+记录了256+0 的读入
+记录了256+0 的写出
+268435456 bytes (268 MB, 256 MiB) copied, 0.681164 s, 394 MB/s
+shiyanlou:~/ $ du -h virtual.img                                                                                                   [19:20:23]
+257M	virtual.img
+shiyanlou:~/ $ sudo mkfs.ext4 virtual.img                                                                                          [19:20:37]
+mke2fs 1.42.13 (17-May-2015)
+Discarding device blocks: 完成                            
+Creating filesystem with 262144 1k blocks and 65536 inodes
+Filesystem UUID: 75285d6e-7f51-4364-b9b4-08bb98f581e9
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729, 204801, 221185
+
+Allocating group tables: 完成                            
+正在写入inode表: 完成                            
+Creating journal (8192 blocks): 完成
+Writing superblocks and filesystem accounting information: 完成 
+
+shiyanlou:~/ $ cat test                                                                                                            [19:21:38]
+SHIYANLOU %                                                                                                                                   shiyanlou:~/ $ sudo mount                                                                                                          [19:27:45]
+/dev/mapper/docker-252:17-6029313-bbe122539d2ca2ef465395449087051d6a4ddf17cdd43c3ac19f43a2d2da394a on / type ext4 (rw,relatime,stripe=16)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev type tmpfs (rw,nosuid,size=65536k,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)
+sysfs on /sys type sysfs (ro,nosuid,nodev,noexec,relatime)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,relatime,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (ro,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+cgroup on /sys/fs/cgroup/pids type cgroup (ro,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (ro,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (ro,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (ro,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/freezer type cgroup (ro,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/blkio type cgroup (ro,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/rdma type cgroup (ro,nosuid,nodev,noexec,relatime,rdma)
+cgroup on /sys/fs/cgroup/memory type cgroup (ro,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (ro,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (ro,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/devices type cgroup (ro,nosuid,nodev,noexec,relatime,devices)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+/dev/vdb1 on /etc/resolv.conf type ext4 (rw,relatime,nobarrier)
+/dev/vdb1 on /etc/hostname type ext4 (rw,relatime,nobarrier)
+/dev/vdb1 on /etc/hosts type ext4 (rw,relatime,nobarrier)
+shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)
+/dev/vda1 on /etc/shiyanlou/sbin/init.sh type ext4 (ro,relatime,errors=remount-ro,stripe=32639)
+proc on /proc/bus type proc (ro,relatime)
+proc on /proc/fs type proc (ro,relatime)
+proc on /proc/irq type proc (ro,relatime)
+proc on /proc/sys type proc (ro,relatime)
+proc on /proc/sysrq-trigger type proc (ro,relatime)
+tmpfs on /proc/acpi type tmpfs (ro,relatime)
+tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/timer_list type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/sched_debug type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/scsi type tmpfs (ro,relatime)
+tmpfs on /sys/firmware type tmpfs (ro,relatime)
+shiyanlou:~/ $ cowsay hello shiyanlou                                                                                              [19:28:04]
+zsh: command not found: cowsay
+shiyanlou:~/ $ sudo apt update                                                                                                     [19:32:41]
+命中:1 http://mirrors.cloud.aliyuncs.com/ubuntu xenial InRelease
+获取:2 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates InRelease [109 kB]
+获取:3 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-backports InRelease [107 kB]
+获取:4 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security InRelease [109 kB]
+获取:5 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/main amd64 Packages [1,419 kB]
+获取:6 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/universe amd64 Packages [1,013 kB]
+获取:7 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/multiverse amd64 Packages [19.3 kB]
+获取:8 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/main amd64 Packages [1,049 kB]
+获取:9 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/universe amd64 Packages [611 kB]
+获取:10 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/multiverse amd64 Packages [6,282 B]
+已下载 4,442 kB，耗时 3秒 (1,269 kB/s)
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+有 156 个软件包可以升级。请执行 ‘apt list --upgradable’ 来查看它们。
+shiyanlou:~/ $ sudo apt install -y cowsay                                                                                          [19:33:04]
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列软件包是自动安装的并且现在不需要了：
+  libpython3-dev libpython3.5-dev python3.5-dev
+使用'sudo apt autoremove'来卸载它(它们)。
+将会同时安装下列软件：
+  cowsay-off libtext-charwidth-perl
+建议安装：
+  filters
+下列【新】软件包将被安装：
+  cowsay cowsay-off libtext-charwidth-perl
+升级了 0 个软件包，新安装了 3 个软件包，要卸载 0 个软件包，有 156 个软件包未被升级。
+需要下载 30.9 kB 的归档。
+解压缩后会消耗 152 kB 的额外空间。
+获取:1 http://mirrors.cloud.aliyuncs.com/ubuntu xenial/main amd64 libtext-charwidth-perl amd64 0.04-7build5 [9,248 B]
+获取:2 http://mirrors.cloud.aliyuncs.com/ubuntu xenial/universe amd64 cowsay all 3.03+dfsg1-15 [18.0 kB]
+获取:3 http://mirrors.cloud.aliyuncs.com/ubuntu xenial/universe amd64 cowsay-off all 3.03+dfsg1-15 [3,640 B]
+已下载 30.9 kB，耗时 0秒 (417 kB/s)    
+正在选中未选择的软件包 libtext-charwidth-perl。
+(正在读取数据库 ... 系统当前共安装有 126890 个文件和目录。)
+正准备解包 .../libtext-charwidth-perl_0.04-7build5_amd64.deb  ...
+正在解包 libtext-charwidth-perl (0.04-7build5) ...
+正在选中未选择的软件包 cowsay。
+正准备解包 .../cowsay_3.03+dfsg1-15_all.deb  ...
+正在解包 cowsay (3.03+dfsg1-15) ...
+正在选中未选择的软件包 cowsay-off。
+正准备解包 .../cowsay-off_3.03+dfsg1-15_all.deb  ...
+正在解包 cowsay-off (3.03+dfsg1-15) ...
+正在处理用于 man-db (2.7.5-1) 的触发器 ...
+正在设置 libtext-charwidth-perl (0.04-7build5) ...
+正在设置 cowsay (3.03+dfsg1-15) ...
+正在设置 cowsay-off (3.03+dfsg1-15) ...
+shiyanlou:~/ $ cowsay hello shiyanlou                                                                                              [19:33:44]
+ _________________
+< hello shiyanlou >
+ -----------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+shiyanlou:~/ $ cowsay nice to meet you                                                                                             [19:42:33]
+ __________________
+< nice to meet you >
+ ------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+shiyanlou:~/ $ cowsay -1                                                                                                           [19:42:51]
+Unknown option: 1
+   
+^C
+shiyanlou:~/ $ cowsay -l                                                                                                           [19:43:15]
+Cow files in /usr/share/cowsay/cows:
+apt beavis.zen bong bud-frogs bunny calvin cheese cock cower daemon default
+dragon dragon-and-cow duck elephant elephant-in-snake eyes flaming-sheep
+ghostbusters gnu head-in hellokitty kiss kitty koala kosh luke-koala
+mech-and-cow meow milk moofasa moose mutilated pony pony-smaller ren sheep
+skeleton snowman sodomized-sheep stegosaurus stimpy suse three-eyes turkey
+turtle tux unipony unipony-smaller vader vader-koala www
+shiyanlou:~/ $ cowsay -f eyes nice                                                                                                 [19:43:20]
+ ______
+< nice >
+ ------
+    \
+     \
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+shiyanlou:~/ $ cowsay -f milk heiheihei                                                                                            [19:43:59]
+ ___________
+< heiheihei >
+ -----------
+ \     ____________ 
+  \    |__________|
+      /           /\
+     /           /  \
+    /___________/___/|
+    |          |     |
+    |  ==\ /== |     |
+    |   O   O  | \ \ |
+    |     <    |  \ \|
+   /|          |   \ \
+  / |  \_____/ |   / /
+ / /|          |  / /|
+/||\|          | /||\/
+    -------------|   
+        | |    | | 
+       <__/    \__>
+shiyanlou:~/ $ cd ~                                                                                                                [19:44:18]
+shiyanlou:~/ $ ls                                                                                                                  [19:45:18]
+Code     golang  lib           package.json   shiyanlou.zip  tardir  test.zip     webpack.config.js  ziptest
+Desktop  home    node_modules  shiyanlou.tar  src-gen        test    virtual.img  yarn.lock
+shiyanlou:~/ $ git clone https://github.com/TangDear/shiyanlou-code                                                                [19:45:25]
+正克隆到 'shiyanlou-code'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+展开对象中: 100% (6/6), 完成.
+检查连接... 完成。
+shiyanlou:~/ $ cd shiyanlou-code                                                                                                   [19:47:06]
+shiyanlou:shiyanlou-code/ (master) $ touch disk.txt                                                                                [19:47:16]
+shiyanlou:shiyanlou-code/ (master*) $ gedit disk.txt                                                                               [19:47:31]
+
+(gedit:4709): GVFS-RemoteVolumeMonitor-WARNING **: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+
