@@ -1,0 +1,264 @@
+shiyanlou:~/ $ ls                                                                                                                  [15:44:10]
+Code  Desktop  golang  hello_shell.c  lib  mybin  node_modules  package.json  src-gen  webpack.config.js  yarn.lock
+shiyanlou:~/ $ cd /home/shiyanlou                                                                                                  [15:44:29]
+shiyanlou:~/ $ source .zshrc                                                                                                       [15:44:48]
+shiyanlou:~/ $ whereis who                                                                                                         [15:44:56]
+who: /usr/bin/who /usr/share/man/man1/who.1.gz
+shiyanlou:~/ $ whereis find                                                                                                        [15:45:29]
+find: /usr/bin/find /usr/share/man/man1/find.1.gz /usr/share/info/find.info.gz
+shiyanlou:~/ $ updatedb                                                                                                            [15:45:47]
+zsh: command not found: updatedb
+shiyanlou:~/ $ bashre                                                                                                              [15:46:26]
+zsh: command not found: bashre
+shiyanlou:~/ $ bashrc                                                                                                              [15:46:40]
+zsh: command not found: bashrc
+shiyanlou:~/ $ bash                                                                                                                [15:46:47]
+shiyanlou@e7b1d81b1b4d:~$ zsh
+shiyanlou:~/ $ sudo apt-get update                                                                                                 [15:46:56]
+命中:1 http://mirrors.cloud.aliyuncs.com/ubuntu xenial InRelease
+获取:2 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates InRelease [109 kB]
+获取:3 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-backports InRelease [107 kB]
+获取:4 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security InRelease [109 kB]
+获取:5 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/main amd64 Packages [1,419 kB]
+获取:6 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/universe amd64 Packages [1,013 kB]
+获取:7 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-updates/multiverse amd64 Packages [19.3 kB]
+获取:8 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/main amd64 Packages [1,049 kB]
+获取:9 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/universe amd64 Packages [611 kB]
+获取:10 http://mirrors.cloud.aliyuncs.com/ubuntu xenial-security/multiverse amd64 Packages [6,282 B]
+已下载 4,442 kB，耗时 3秒 (1,457 kB/s)                   
+正在读取软件包列表... 完成
+shiyanlou:~/ $ sudo apt-get install locate                                                                                         [15:47:20]
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列软件包是自动安装的并且现在不需要了：
+  libpython3-dev libpython3.5-dev python3.5-dev
+使用'sudo apt autoremove'来卸载它(它们)。
+下列【新】软件包将被安装：
+  locate
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 156 个软件包未被升级。
+需要下载 51.1 kB 的归档。
+解压缩后会消耗 177 kB 的额外空间。
+获取:1 http://mirrors.cloud.aliyuncs.com/ubuntu xenial/universe amd64 locate amd64 4.6.0+git+20160126-2 [51.1 kB]
+已下载 51.1 kB，耗时 0秒 (826 kB/s)
+正在选中未选择的软件包 locate。
+(正在读取数据库 ... 系统当前共安装有 126880 个文件和目录。)
+正准备解包 .../locate_4.6.0+git+20160126-2_amd64.deb  ...
+正在解包 locate (4.6.0+git+20160126-2) ...
+正在处理用于 man-db (2.7.5-1) 的触发器 ...
+正在设置 locate (4.6.0+git+20160126-2) ...
+shiyanlou:~/ $ locate /etc/sh                                                                                                      [15:47:46]
+shiyanlou:~/ $ locate /usr/share/\*.jpg                                                                                            [15:48:06]
+shiyanlou:~/ $ whereis-c help                                                                                                      [15:48:40]
+zsh: command not found: whereis-c
+shiyanlou:~/ $ whereis -c helo                                                                                                     [15:49:04]
+
+Usage:
+ whereis [options] [-BMS <dir>... -f] <name>
+
+Locate the binary, source, and manual-page files for a command.
+
+选项：
+ -b         search only for binaries
+ -B <dirs>  define binaries lookup path
+ -m         search only for manuals and infos
+ -M <dirs>  define man and info lookup path
+ -s         search only for sources
+ -S <dirs>  define sources lookup path
+ -f         terminate <dirs> argument list
+ -u         search for unusual entries
+ -l         output effective lookup paths
+
+For more details see whereis(1).
+shiyanlou:~/ $ whereis -c who                                                                                                      [15:49:22]
+
+Usage:
+ whereis [options] [-BMS <dir>... -f] <name>
+
+Locate the binary, source, and manual-page files for a command.
+
+选项：
+ -b         search only for binaries
+ -B <dirs>  define binaries lookup path
+ -m         search only for manuals and infos
+ -M <dirs>  define man and info lookup path
+ -s         search only for sources
+ -S <dirs>  define sources lookup path
+ -f         terminate <dirs> argument list
+ -u         search for unusual entries
+ -l         output effective lookup paths
+
+For more details see whereis(1).
+shiyanlou:~/ $ whereis-c who                                                                                                       [15:49:43]
+zsh: command not found: whereis-c
+shiyanlou:~/ $ which man                                                                                                           [15:49:58]
+/usr/bin/man
+shiyanlou:~/ $ find /etc/ -name interfaces                                                                                         [15:50:20]
+find: `/etc/polkit-1/localauthority': 权限不够
+/etc/network/interfaces
+find: `/etc/ssl/private': 权限不够
+shiyanlou:~/ $ find ~ -mtime 0                                                                                                     [15:51:02]
+/home/shiyanlou
+/home/shiyanlou/.config
+/home/shiyanlou/.config/SogouPY
+/home/shiyanlou/.config/SogouPY/sgim_usr_v3new.bin
+/home/shiyanlou/.config/SogouPY/sgim_numFreqAdjust.bin
+/home/shiyanlou/.config/SogouPY/sgim_fix_first.bin
+/home/shiyanlou/.config/SogouPY/sgim_blackIfk.bin
+/home/shiyanlou/.config/SogouPY/sgim_smartInfo.bin
+/home/shiyanlou/.config/SogouPY/sgim_infokey.bin
+/home/shiyanlou/.config/xfce4
+/home/shiyanlou/.config/xfce4/xfconf/xfce-perchannel-xml
+/home/shiyanlou/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+/home/shiyanlou/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+/home/shiyanlou/.config/xfce4/xfwm4
+/home/shiyanlou/.config/xfce4/desktop
+/home/shiyanlou/.config/xfce4/desktop/icons.screen0-1136x817.rc
+/home/shiyanlou/.config/gedit
+/home/shiyanlou/.config/gedit/accels
+/home/shiyanlou/.config/Thunar
+/home/shiyanlou/.config/Thunar/uca.xml
+/home/shiyanlou/.config/pulse
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-card-database.tdb
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-default-source
+/home/shiyanlou/.config/pulse/cookie
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-runtime
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-default-sink
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-device-volumes.tdb
+/home/shiyanlou/.config/pulse/e7b1d81b1b4d-stream-volumes.tdb
+/home/shiyanlou/.config/Trolltech.conf
+/home/shiyanlou/.config/dconf
+/home/shiyanlou/.config/dconf/user
+/home/shiyanlou/.config/SogouPY.users
+/home/shiyanlou/.config/SogouPY.users/acc.dat
+/home/shiyanlou/.gvfs
+/home/shiyanlou/.dbus
+/home/shiyanlou/.dbus/session-bus
+/home/shiyanlou/.dbus/session-bus/5ca861d9728839a519dc72b35d8fee36-1
+/home/shiyanlou/.local
+/home/shiyanlou/.local/share
+/home/shiyanlou/.local/share/gvfs-metadata
+/home/shiyanlou/.local/share/gvfs-metadata/home
+/home/shiyanlou/.local/share/gvfs-metadata/home-72e06cee.log
+/home/shiyanlou/.local/share/recently-used.xbel
+/home/shiyanlou/mybin
+/home/shiyanlou/mybin/hello_shell
+/home/shiyanlou/mybin/hello_shell.sh
+/home/shiyanlou/.zcompdump-e7b1d81b1b4d-5.1.1
+/home/shiyanlou/hello_shell.c
+/home/shiyanlou/.sogouinput
+/home/shiyanlou/.sogouinput/UrlUsrDict_MemLocker
+/home/shiyanlou/.sogouinput/UsrExtDict_MemLocker
+/home/shiyanlou/.sogouinput/UsrDict_MemLocker
+/home/shiyanlou/.sogouinput/ImeKernel_DictLocker
+/home/shiyanlou/.sogouinput/CloudCachecDictLongWord_MemLocker
+/home/shiyanlou/.sogouinput/sgim_annex_bin_FileLocker
+/home/shiyanlou/.sogouinput/UserSpellModelDict_MemLocker
+/home/shiyanlou/.sogouinput/SogouIme_VersionManagerSharedTable__Lock
+/home/shiyanlou/.sogouinput/sgim_quick_bin_FileLocker
+/home/shiyanlou/.sogouinput/SupportCharDict_MemLocker
+/home/shiyanlou/.sogouinput/UrlGuideDict_MemLocker
+/home/shiyanlou/.sogouinput/NumFreqAdjustDict_MemLocker
+/home/shiyanlou/.sogouinput/DictManager_GlobalLocker
+/home/shiyanlou/.sogouinput/ExtDict_MemLocker
+/home/shiyanlou/.sogouinput/PrivilegeDict_MemLocker
+/home/shiyanlou/.sogouinput/infokeyict_MemLocker
+/home/shiyanlou/.sogouinput/AbbrUsrDict_MemLocker
+/home/shiyanlou/.sogouinput/sgim_adjcache_bin_FileLocker
+/home/shiyanlou/.sogouinput/smartinfo_MemLocker
+/home/shiyanlou/.sogouinput/KeyPyMap_MemLocker
+/home/shiyanlou/.sogouinput/PyTipDict_MemLocker
+/home/shiyanlou/.sogouinput/EngUsrDict_MemLocker
+/home/shiyanlou/.sogouinput/sgim_core_bin_FileLocker
+/home/shiyanlou/.sogouinput/GlobalConfig_MemLocker
+/home/shiyanlou/.sogouinput/sgim_tra_bin_FileLocker
+/home/shiyanlou/.sogouinput/sgim_url_bin_FileLocker
+/home/shiyanlou/.sogouinput/CloudCachecDict_MemLocker
+/home/shiyanlou/.sogouinput/infoblackict_MemLocker
+/home/shiyanlou/.sogouinput/PunctureDict_MemLocker
+/home/shiyanlou/.sogouinput/sgim_eng_pre_bin_FileLocker
+/home/shiyanlou/.sogouinput/sgim_hz_bin_FileLocker
+/home/shiyanlou/.sogouinput/sgim_py_bin_FileLocker
+/home/shiyanlou/.sogouinput/FixFirstDict_MemLocker
+/home/shiyanlou/.sogouinput/DelWordDict_MemLocker
+/home/shiyanlou/.sogouinput/sgim_phrases_bin_FileLocker
+/home/shiyanlou/.sogouinput/sgim_eng_bin_FileLocker
+/home/shiyanlou/.theia
+/home/shiyanlou/.theia/settings.json
+/home/shiyanlou/.zshrc
+/home/shiyanlou/.zcompdump
+/home/shiyanlou/.cache
+/home/shiyanlou/.cache/gstreamer-1.0
+/home/shiyanlou/.cache/gstreamer-1.0/registry.x86_64.bin
+/home/shiyanlou/.cache/dconf
+/home/shiyanlou/.cache/sessions
+/home/shiyanlou/.gconf
+/home/shiyanlou/.bash_history
+/home/shiyanlou/.ICEauthority
+/home/shiyanlou/Desktop/xfce4-terminal.desktop
+/home/shiyanlou/.pip
+/home/shiyanlou/.pip/pip.conf
+/home/shiyanlou/.vnc
+/home/shiyanlou/.vnc/e7b1d81b1b4d:1.log
+/home/shiyanlou/.vnc/passwd
+/home/shiyanlou/.vnc/config
+/home/shiyanlou/.vnc/e7b1d81b1b4d:1.pid
+/home/shiyanlou/.Xauthority
+/home/shiyanlou/.oh-my-zsh/log
+/home/shiyanlou/.oh-my-zsh/cache
+/home/shiyanlou/.oh-my-zsh/cache/.zsh-update
+/home/shiyanlou/.zsh_history
+shiyanlou:~/ $ find ~-newer /home/shiyanlou/Code                                                                                   [15:51:41]
+zsh: no such user or named directory: -newer
+shiyanlou:~/ $ git init                                                                                                            [15:52:18]
+初始化空的 Git 仓库于 /home/shiyanlou/.git/
+shiyanlou:~/ (master*) $ git config --global user.name "TangDear"                                                                  [15:55:34]
+shiyanlou:~/ (master*) $ git config --global user.email "411577403@qq.com"                                                         [15:57:23]
+shiyanlou:~/ (master*) $ git clone ^[[200~https://github.com/TangDear/shiyanlou-code                                               [15:57:43]
+]2;git clone [200~https://github.com/TangDear/shiyanlou-codezsh: bad pattern: ^[[200~https://github.com/TangDear/shiyanlou-code
+shiyanlou:~/ (master*) $ #include <stdio.h>                                                                                        [15:58:59]
+shiyanlou:~/ (master*) $                                                                                                           [15:58:59]
+shiyanlou:~/ (master*) $ int main(void)                                                                                            [15:58:59]
+zsh: unknown file attribute: v
+shiyanlou:~/ (master*) $ {                                                                                                         [15:59:00]
+cursh>     printf("hello world!\n");
+zsh: event not found: \n
+shiyanlou:~/ (master*) $     return 0;                                                                                             [15:59:00]
+shiyanlou:~/ (master*) $ }                                                                                                         [15:59:00]
+zsh: parse error near `}'
+shiyanlou:~/ (master*) $ #!/bin/bash                                                                                               [15:59:00]
+shiyanlou:~/ (master*) $                                                                                                           [15:59:00]
+shiyanlou:~/ (master*) $ for ((i=0; i<10; i++));do                                                                                 [15:59:00]
+for>     echo "hello shell"
+for> done
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+hello shell
+shiyanlou:~/ (master*) $                                                                                                           [15:59:01]
+shiyanlou:~/ (master*) $ exit 0~                                                                                                   [15:59:01]
+zsh: bad math expression: operator expected at `~'
+shiyanlou@e7b1d81b1b4d:~$ zsh
+shiyanlou:~/ (master*) $ cd ~                                                                                                      [15:59:14]
+shiyanlou:~/ (master*) $ git clone http://github.com/TangDear/shiyanlou-code                                                       [15:59:19]
+正克隆到 'shiyanlou-code'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+展开对象中: 100% (3/3), 完成.
+检查连接... 完成。
+shiyanlou:~/ (master*) $ ls                                                                                                        [16:00:07]
+Code  Desktop  golang  hello_shell.c  lib  mybin  node_modules  package.json  shiyanlou-code  src-gen  webpack.config.js  yarn.lock
+shiyanlou:~/ (master*) $ cd shiyanlou                                                                                              [16:01:43]
+cd: 没有那个文件或目录: shiyanlou
+shiyanlou:~/ (master*) $ cd shiyanlou-code                                                                                         [16:01:51]
+shiyanlou:shiyanlou-code/ (master) $ touch envirment.txt                                                                           [16:02:00]
+shiyanlou:shiyanlou-code/ (master*) $ gedit envirment.txt                                                                          [16:02:10]
+
